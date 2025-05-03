@@ -46,7 +46,7 @@ public:
 void AcademicBook::getField() {
    cout << "Field: " << field << endl;
 }
-void AcademicBook::showInfo() { // Fix: Access private members directly since AcademicBook is a derived class
+void AcademicBook::showInfo() { 
    cout << "AcademicBook Title: " << title << "\nAcademicBook Author: " << author << "\nAcademicBook Year: " << year << endl;
 }
 
@@ -90,13 +90,13 @@ int main()
    librarian.updateYear(abook1, 2023);*/
 
 // ---------------------------- POLYMORPHISM SECTION ------------------------------------------------------------------------------------
-   // Book pointer'larý kullanýyoruz:
+   
    Book* fbook1 = new FictionBook("Suç ve  Ceza", "Dostoyevski", 1995, "Kurgu");
    Book* abook1 = new AcademicBook("Reader at work 1", "METU", 2020, "Dil");
 
-   // Polimorfizm: virtual sayesinde gerçek sýnýfýn fonksiyonu çaðrýlýr
+   
    fbook1->showInfo();
-   // Tür dönüþümü yaparak FictionBook'a özel fonksiyon çaðrýlýr
+   
    dynamic_cast<FictionBook*>(fbook1)->getGenre();
 
    abook1->showInfo();
@@ -111,7 +111,7 @@ int main()
 
    librarian.updateYear(*abook1, 2023);
 
-   // Belleði temizleyelim
+  
    delete fbook1;
    delete abook1;
 
